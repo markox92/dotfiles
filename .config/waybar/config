@@ -1,0 +1,126 @@
+{
+	"margin-top": 0,
+	"margin-left": 0,
+	"margin-right": 0,
+	"height": 28,
+	"modules-left": [
+		"hyprland/window"
+	],
+	"modules-center": [
+		"hyprland/workspaces"
+	],
+	"modules-right": [
+		"tray",
+        "custom/weather",
+		"custom/nvidia-smi",
+		"temperature",
+		"pulseaudio",
+		"clock"
+	],
+	"hyprland/window": {
+		"format": "{}",
+		"max-length": 35,
+		"rewrite": {
+			"": "Hyprland"
+		},
+		"separate-outputs": true
+	},
+	"hyprland/workspaces": {
+		"format": "{icon}",
+		"on-click": "activate",
+		"all-outputs": false,
+		"format-icons": {
+			"active": "",
+			"default": ""
+		},
+		"sort-by-number": true,
+		"persistent-workspaces": {
+			"1": [
+				"DP-2"
+			],
+			"2": [
+				"DP-2"
+			],
+			"3": [
+				"DP-2"
+			],
+			"4": [
+				"DP-2"
+			],
+			"5": [
+				"DP-1"
+			],
+			"6": [
+				"DP-1"
+			],
+			"7": [
+				"DP-1"
+			],
+			"8": [
+				"DP-1"
+			]
+		}
+	},
+	"clock": {
+		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+		"format-alt": "{:%d %B, %Y}"
+	},
+	"cpu": {
+		"format": "  {usage}%",
+		"tooltip": false
+	},
+	"memory": {
+		"format": "{}%  "
+	},
+	"temperature": {
+		"interval": 10,
+		"hwmon-path": "/sys/devices/platform/coretemp.0/hwmon/hwmon4/temp1_input",
+		"format": "CPU {temperatureC}°C",
+		"format-alt": "Intel {temperatureC}°C"
+	},
+	"custom/nvidia-smi": {
+		"format": "GPU {}°C",
+		"exec": "nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader",
+		"format-alt": "Nvidia {}°C",
+		"interval": 10
+	},
+	"custom/weather": {
+		"exec": "python ~/.config/waybar/scripts/weather.py",
+		"restart-interval": 300,
+		"return-type": "json",
+		//"on-click": "xdg-open https://weather.com/en-IN/weather/today/l/$(location_id)",
+		"format-alt": "{alt}"
+	},
+	"network": {
+		"format-wifi": "  {signalStrength}%",
+		"format-ethernet": "{cidr} ",
+		"tooltip-format": "{ifname} via {gwaddr} ",
+		"format-linked": "{ifname} (No IP) ",
+		"format-disconnected": " ⚠ ",
+		"format-alt": "{ifname}: {ipaddr}/{cidr}"
+	},
+	"pulseaudio": {
+		"format": "{icon} {volume}%",
+		"format-bluetooth": "{volume}% {icon} {format_source}",
+		"format-bluetooth-muted": " {icon} {format_source}",
+		"format-muted": " {format_source}",
+		"format-icons": {
+			"headphone": "",
+			"hands-free": "󰗅",
+			"headset": "",
+			"phone": "",
+			"portable": "",
+			"car": "",
+			"default": [
+				"",
+				"",
+				" "
+			]
+		},
+		"on-click": "pavucontrol"
+	},
+	"tray": {
+		"icon-size": 17,
+		"spacing": 8
+	}
+}

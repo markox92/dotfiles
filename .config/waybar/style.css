@@ -1,0 +1,177 @@
+@import "macchiato.css";
+
+* {
+    font-family:"JetBrainsMono Nerd Font" ,Roboto, Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 0;
+    margin: 0;
+    color: #ffffff;
+}
+
+window#waybar {
+    border-style: solid;
+	border-width: 0px;
+	border-color: rgba(255, 255, 255, 0.1);
+    background-color:rgba(13, 17, 23, 0.5);
+    border-radius: 0px;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+button {
+    /* Use box-shadow instead of border so the text isn't offset */
+    /* Avoid rounded borders under each button name */
+    border: none;
+    border-radius: 0;
+}
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+button:hover {
+    background: inherit;
+    /* box-shadow: inset 0 -3px #ffffff; */
+}
+
+/* you can set a style on hover for any module like this */
+#pulseaudio:hover {
+    background-color: @surface2;
+}
+
+#workspaces button {
+    padding: 0 8px 0 5px;
+    background-color: transparent;
+    color: #ffffff;
+}
+
+#workspaces button.active {
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: inset 0 -2px rgba(255, 255, 255, 0.3);
+}
+#workspaces button:hover
+{
+    /* box-shadow: inset 0 -1px #ffffff; */
+    background: rgba(255, 255, 255, 0.05);
+}
+
+#workspaces button.focused {
+    background-color: @lavender;
+    /* box-shadow: inset 0 -1px #ffffff; */
+}
+
+#workspaces button.urgent {
+    background-color: #eb4d4b;
+}
+
+#custom-nvidia-smi {color: @green;}
+#temperature {color: @blue;}
+#tray{ font-size: 16px;}
+#clock,
+#battery,
+#cpu,
+#memory,
+#temperature,
+#custom-nvidia-smi,
+#network,
+#pulseaudio,
+#custom-weather
+{
+    padding: 0 10px;
+}
+ 
+#pulseaudio {
+    color: @maroon;
+}
+
+#network {
+    color: @yellow;
+}
+
+#temperature {
+    color: @sky;
+}
+
+#battery {
+    color: @green;
+}
+
+#clock {
+    color: @flamingo;
+}
+
+#window {
+    color: @rosewater;
+    font-family:"SF Pro"
+}
+
+.modules-right,.modules-left,.modules-center {
+    /* background-color: @base; */
+    border-radius: 15px;
+}
+.modules-right {
+    padding: 0 10px;
+}
+
+.modules-left {
+    padding: 0 20px;
+}
+
+.modules-center {
+    padding: 0 10px;
+}
+#battery.charging, #battery.plugged {
+    color: @sapphire;
+}
+
+@keyframes blink {
+    to {
+        color: #000000;
+    }
+}
+
+/* Using steps() instead of linear as a timing function to limit cpu usage */
+#battery.critical:not(.charging) {
+    background-color: #f53c3c;
+    color: #ffffff;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+label:focus {
+    background-color: #000000;
+}
+
+#pulseaudio.muted {
+    color: @text;
+}
+
+
+#custom-weather.severe {
+    color: #eb937d;
+}
+
+#custom-weather.sunnyDay {
+    color: #c2ca76;
+}
+
+#custom-weather.clearNight {
+    color: #2b2b2a;
+}
+
+#custom-weather.cloudyFoggyDay, #custom-weather.cloudyFoggyNight {
+    color: #c2ddda;
+}
+
+#custom-weather.rainyDay, #custom-weather.rainyNight {
+    color: #5aaca5;
+}
+
+#custom-weather.showyIcyDay, #custom-weather.snowyIcyNight {
+    color: #d6e7e5;
+}
+
+#custom-weather.default {
+    color: #dbd9d8;
+}

@@ -1,0 +1,23 @@
+{
+  "prefs": {
+    "WelcomeTipsCompleted": "true",
+    "Theme": "{\"Custom\":{\"name\":\"Xcad\",\"path\":\"/home/amn/.local/share/warp-terminal/themes/xcad.yml\"}}",
+    "HonorPS1": "false",
+    "FontName": "\"JetBrainsMono Nerd Font\"",
+    "SavedPrompt": "\"Default\"",
+    "ShouldDimInactivePanes": "true",
+    "NotebookFontSize": "14.0",
+    "AIRequestLimitInfo": "{\"limit\":40,\"num_requests_used_since_refresh\":0,\"next_refresh_time\":\"2024-07-06T23:21:25.356166Z\"}",
+    "TelemetryEnabled": "false",
+    "ExperimentId": "2c6281db-1fb6-416f-a638-8948706f0511",
+    "WelcomeTipsFeaturesUsed": "[{\"Action\":\"CommandPalette\"},{\"Hint\":\"BlockAction\"},{\"Action\":\"SplitPane\"},{\"Action\":\"ThemePicker\"},{\"Hint\":\"BlockSelect\"},{\"Action\":\"AiCommandSearch\"},{\"Action\":\"CommandSearch\"},{\"Action\":\"SaveNewLaunchConfig\"},{\"Hint\":\"CreateBlock\"}]",
+    "AutosuggestionAcceptedCount": "2",
+    "FontSize": "16.0",
+    "AIAssistantRequestLimitInfo": "{\"limit\":40,\"num_requests_used_since_refresh\":0,\"next_refresh_time\":\"2024-07-06T23:21:25.356166830Z\"}",
+    "HasAutoOpenedWelcomeFolder": "true",
+    "OverrideOpacity": "100",
+    "CrashReportingEnabled": "false",
+    "ReceivedReferralTheme": "\"Inactive\"",
+    "ChangelogVersions": "{\"v0.2024.06.04.08.02.stable_02\":true}"
+  }
+}
