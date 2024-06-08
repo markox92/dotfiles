@@ -12,10 +12,10 @@ yay -S --noconfirm nvidia-beta-dkms opencl-nvidia-beta lib32-opencl-nvidia-beta
 yay -S hyprland-git 
 
 # Install hyprpaper, wallpapers support for Hyprland
-pacman -S --noconfirm hyprpaper nwg-look
+sudo pacman -S --noconfirm hyprpaper nwg-look
 
 # Install package & software
-pacman -S --noconfirm firefox kitty xsettingsd wget curl nano zip unzip
+sudo pacman -S --noconfirm firefox kitty xsettingsd wget curl nano zip unzip
 yay -S --noconfir rofi-lbonn-wayland-git nwg-dock-hyprland waybar-git visual-studio-code-bin
 
 # Install Theme,cursors and icons
