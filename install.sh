@@ -12,7 +12,7 @@ yay -S --noconfirm hyprland-git
 sudo pacman -S --noconfirm hyprpaper nwg-look egl-wayland
 
 # Install package & software
-sudo pacman -S --noconfirm firefox alacritty xsettingsd wget curl nano zip unzip ttf-jetbrains-mono-nerd
+sudo pacman -S --noconfirm firefox alacritty xsettingsd wget curl nano zip unzip ttf-jetbrains-mono-nerd python-pyquery
 yay -S --noconfirm rofi-lbonn-wayland-git nwg-dock-hyprland waybar-git visual-studio-code-bin
 
 # Install Theme,cursors and icons
