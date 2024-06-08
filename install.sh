@@ -15,7 +15,7 @@ yay -S hyprland-git
 sudo pacman -S --noconfirm hyprpaper nwg-look
 
 # Install package & software
-sudo pacman -S --noconfirm firefox kitty xsettingsd wget curl nano zip unzip
+sudo pacman -S --noconfirm firefox kitty xsettingsd wget curl nano zip unzip ttf-jetbrains-mono-nerd
 yay -S --noconfir rofi-lbonn-wayland-git nwg-dock-hyprland waybar-git visual-studio-code-bin
 
 # Install Theme,cursors and icons
@@ -25,3 +25,4 @@ cd ~ && git clone https://github.com/yeyushengfan258/Reversal-icon-theme.git && 
 
 # Copy files
 cd ~ && git clone https://github.com/markox92/dotfiles && cd dotfiles && cp -r .config ~/ && cp -r Wallpapers ~/
+mkdir ~/.fonts && git clone https://github.com/epk/SF-Mono-Nerd-Font ~/.fonts && git clone https://github.com/sahibjotsaggu/San-Francisco-Pro-Fonts ~/.fonts && fc-cache -f -v
