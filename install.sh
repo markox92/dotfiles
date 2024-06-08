@@ -31,27 +31,31 @@ git clone https://github.com/epk/SF-Mono-Nerd-Font ~/fonts && cd ~/fonts && mv *
 git clone https://github.com/sahibjotsaggu/San-Francisco-Pro-Fonts ~/fonts && cd ~/.fonts && mv * ~/fonts && cd ~ && rm -rf ~/fonts
 fc-cache -f -v
 
-# Copy dotfiles1983
+# Copy dotfiles
 cd ~/dotfiles
 cp -r .config ~/ && cp -r Wallpapers ~/
-cd .. && rm -rf dotfiles
 
 function config_kernel() {
     clear
     printf "Config kernel..."
-    sudo sed -Ei 's/^(MODULES=\([^\)]*)\)/\1 nvidia nvidia_modeset nvidia_uvm nvidia_drm)/' /etc/mkinitcpio.conf > /dev/null 2>&1
-    sudo echo -e "options nvidia-drm modeset=1" | sudo tee -a /etc/modprobe.d/nvidia.conf > /dev/null 2>&1
-    sudo mkinitcpio --config /etc/mkinitcpio.conf --generate /boot/initramfs-custom.img > /dev/null 2>&1
+    sudo sed -Ei 's/^(MODULES=\([^\)]*)\)/\1nvidia nvidia_modeset nvidia_uvm nvidia_drm)/' /etc/mkinitcpio.conf
+    sudo echo -e "options nvidia-drm modeset=1" | sudo tee -a /etc/modprobe.d/nvidia.conf
+    sudo mkinitcpio --config /etc/mkinitcpio.conf --generate /boot/initramfs-custom.img
     if [ -f /etc/default/grub ]; then
-        sudo sed -i 's/\(GRUB_CMDLINE_LINUX_DEFAULT=".*\)"/\1 nvidia_drm.modeset=1 nvidia.NVreg_PreserveVideoMemoryAllocations=1"/' /etc/default/grub > /dev/null 2>&1
-        sudo grub-mkconfig -o /boot/grub/grub.cfg > /dev/null 2>&1
+        sudo sed -i 's/\(GRUB_CMDLINE_LINUX_DEFAULT=".*\)"/\1 nvidia_drm.modeset=1 nvidia.NVreg_PreserveVideoMemoryAllocations=1"/' /etc/default/grub
+        sudo grub-mkconfig -o /boot/grub/grub.cfg
     fi
-    echo "blacklist nouveau" | sudo tee -a /etc/modprobe.d/nouveau.conf > /dev/null 2>&1
+    echo "blacklist nouveau" | sudo tee -a /etc/modprobe.d/nouveau.conf
     if [ -f "/etc/modprobe.d/blacklist.conf" ]; then
-        echo "install nouveau /bin/true" | sudo tee -a "/etc/modprobe.d/blacklist.conf"  > /dev/null 2>&1
+        echo "install nouveau /bin/true" | sudo tee -a "/etc/modprobe.d/blacklist.conf"
     else
-        echo "install nouveau /bin/true" | sudo tee "/etc/modprobe.d/blacklist.conf" > /dev/null 2>&1
+        echo "install nouveau /bin/true" | sudo tee "/etc/modprobe.d/blacklist.conf"
     fi
     echo -e "Done"
 }
-config_kernel()
+config_kernel
+
+
+# End remove dotfiles
+cd ~ && rm -rf dotfiles
+echo "Reboot PC"
