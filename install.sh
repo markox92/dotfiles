@@ -27,8 +27,8 @@ if [ ! -d "$HOME/.fonts" ]; then
     mkdir -p "$HOME/.fonts"
 fi
 
-git clone https://github.com/epk/SF-Mono-Nerd-Font ~/.fonts 
-git clone https://github.com/sahibjotsaggu/San-Francisco-Pro-Fonts ~/.fonts 
+git clone https://github.com/epk/SF-Mono-Nerd-Font ~/fonts && cd ~/fonts && mv * ~/.fonts && cd ~ && rm -rf ~/fonts
+git clone https://github.com/sahibjotsaggu/San-Francisco-Pro-Fonts ~/fonts && cd ~/.fonts && mv * ~/fonts && cd ~ && rm -rf ~/fonts
 fc-cache -f -v
 
 # Copy dotfiles1983
