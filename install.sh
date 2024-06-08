@@ -21,12 +21,17 @@ cd ~ && git clone https://github.com/vinceliuice/McMojave-cursors && cd McMojave
 cd ~ && git clone https://github.com/yeyushengfan258/Reversal-icon-theme.git && cd Reversal-icon-theme && ./install.sh -a && cd .. && rm -rf Reversal-icon-theme
 
 # Install fonts
-mkdir ~/.fonts 
+# Check if .fonts directory exists in the home directory
+if [ ! -d "$HOME/.fonts" ]; then
+    # If it does not exist, create it
+    mkdir -p "$HOME/.fonts"
+fi
+
 git clone https://github.com/epk/SF-Mono-Nerd-Font ~/.fonts 
 git clone https://github.com/sahibjotsaggu/San-Francisco-Pro-Fonts ~/.fonts 
 fc-cache -f -v
 
-# Copy dotfiles
+# Copy dotfiles1983
 cd ~/dotfiles
 cp -r .config ~/ && cp -r Wallpapers ~/
 cd .. && rm -rf dotfiles
