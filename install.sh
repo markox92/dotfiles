@@ -36,7 +36,6 @@ cd ~/dotfiles
 cp -r .config ~/ && cp -r Wallpapers ~/
 
 function config_kernel() {
-    clear
     printf "Config kernel..."
     sudo sed -Ei 's/^(MODULES=\([^\)]*)\)/\1nvidia nvidia_modeset nvidia_uvm nvidia_drm)/' /etc/mkinitcpio.conf
     sudo echo -e "options nvidia-drm modeset=1" | sudo tee -a /etc/modprobe.d/nvidia.conf
