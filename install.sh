@@ -7,6 +7,11 @@ cd ~
 git clone https://github.com/Frogging-Family/nvidia-all.git
 cd nvidia-all
 makepkg -si
+sudo pacman -S --noconfirm libva-nvidia-driver
+sudo systemctl enable nvidia-suspend.service
+sudo systemctl enable nvidia-hibernate.service
+sudo systemctl enable nvidia-resume.service
+
 # egl-wayland provides the necessary compatibility layer, instead of falling back to zink/Vulkan for proprietary drivers.
 yay -S --noconfirm egl-wayland-git
 #yay -S --noconfirm nvidia-beta-dkms opencl-nvidia-beta lib32-opencl-nvidia-beta
