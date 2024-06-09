@@ -3,7 +3,8 @@
 sudo pacman -Syu && sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si && cd .. && rm -rf yay
 
 # Install NVIDIA Beta drivers. Currently 555.52.04
-yay -S --noconfirm nvidia-beta-dkms
+yay -S --noconfirm linux-headers 
+yay -S --noconfirm nvidia-beta-dkms nvidia-utils-beta lib32-nvidia-utils-beta libva-nvidia-driver-git
 
 # egl-wayland provides the necessary compatibility layer, instead of falling back to zink/Vulkan for proprietary drivers.
 yay -S --noconfirm egl-wayland-git
