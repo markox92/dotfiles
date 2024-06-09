@@ -28,13 +28,6 @@ cd ~ && git clone https://github.com/vinceliuice/WhiteSur-cursors && cd WhiteSur
 
 # Install fonts
 sudo pacman -S --noconfirm ttf-jetbrains-mono ttf-jetbrains-mono-nerd noto-fonts
-# Check if .fonts directory exists in the home directory
-if [ ! -d "$HOME/.fonts" ]; then
-    mkdir -p "$HOME/.fonts"
-fi
-#git clone https://github.com/epk/SF-Mono-Nerd-Font ~/fonts && cd ~/fonts && mv *.otf ~/.fonts && cd ~ && rm -rf ~/fonts
-#git clone https://github.com/sahibjotsaggu/San-Francisco-Pro-Fonts ~/fonts && cd ~/fonts && mv *.{otf,ttf} ~/.fonts && cd ~ && rm -rf ~/fonts
-#fc-cache -f -v
 
 # Copy dotfiles
 mkdir -p ~/.local/share/warp-terminal/themes
