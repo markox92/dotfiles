@@ -41,6 +41,7 @@ fi
 #fc-cache -f -v
 
 # Copy dotfiles
+mkdir -p ~/.local/share/warp-terminal/themes
 cd ~/dotfiles
 cp -r .config ~/ && cp -r Wallpapers ~/
 
