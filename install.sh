@@ -15,7 +15,7 @@ yay -S --noconfirm hyprland-git
 sudo pacman -S --noconfirm hyprpaper nwg-look
 
 # Install package & software
-sudo pacman -S --noconfirm firefox alacritty xsettingsd wget curl nano zip unzip solaar zsh
+sudo pacman -S --noconfirm firefox alacritty xsettingsd wget curl nano zip unzip solaar zsh swappy mpv nautilus
 yay -S --noconfirm rofi-lbonn-wayland-git nwg-dock-hyprland waybar-git visual-studio-code-bin
 
 # Install Theme and waybar requirements
