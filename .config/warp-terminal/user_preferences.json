@@ -1,7 +1,7 @@
 {
   "prefs": {
     "WelcomeTipsCompleted": "true",
-    "Theme": "{\"Custom\":{\"name\":\"Xcad\",\"path\":\"/home/amn/.local/share/warp-terminal/themes/xcad.yml\"}}",
+    "Theme": "{\"Custom\":{\"name\":\"modern\",\"path\":\"~/.local/share/warp-terminal/themes/modern.yml\"}}",
     "HonorPS1": "false",
     "FontName": "\"JetBrainsMono Nerd Font\"",
     "SavedPrompt": "\"Default\"",
