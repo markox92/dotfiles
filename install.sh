@@ -3,11 +3,7 @@
 sudo pacman -Syu && sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si && cd .. && rm -rf yay
 
 # Install NVIDIA Beta drivers. Currently 555.52.04
-cd ~
-git clone https://github.com/Frogging-Family/nvidia-all.git
-cd nvidia-all
-makepkg -si
-sudo pacman -S --noconfirm libva-nvidia-driver
+yay -S --noconfirm nvidia-beta-dkms nvidia-utils-beta lib32-nvidia-utils-beta libva-nvidia-driver-git
 sudo systemctl enable nvidia-suspend.service
 sudo systemctl enable nvidia-hibernate.service
 sudo systemctl enable nvidia-resume.service
@@ -35,14 +31,14 @@ cd ~ && git clone https://github.com/vinceliuice/McMojave-cursors && cd McMojave
 #cd ~ && git clone https://github.com/yeyushengfan258/Reversal-icon-theme.git && cd Reversal-icon-theme && ./install.sh -a && cd .. && rm -rf Reversal-icon-theme
 
 # Install fonts
-sudo pacman -S --noconfirm ttf-jetbrains-mono-nerd noto-fonts
+sudo pacman -S --noconfirm ttf-jetbrains-mono ttf-jetbrains-mono-nerd noto-fonts
 # Check if .fonts directory exists in the home directory
 if [ ! -d "$HOME/.fonts" ]; then
     mkdir -p "$HOME/.fonts"
 fi
-git clone https://github.com/epk/SF-Mono-Nerd-Font ~/fonts && cd ~/fonts && mv *.otf ~/.fonts && cd ~ && rm -rf ~/fonts
-git clone https://github.com/sahibjotsaggu/San-Francisco-Pro-Fonts ~/fonts && cd ~/fonts && mv *.{otf,ttf} ~/.fonts && cd ~ && rm -rf ~/fonts
-fc-cache -f -v
+#git clone https://github.com/epk/SF-Mono-Nerd-Font ~/fonts && cd ~/fonts && mv *.otf ~/.fonts && cd ~ && rm -rf ~/fonts
+#git clone https://github.com/sahibjotsaggu/San-Francisco-Pro-Fonts ~/fonts && cd ~/fonts && mv *.{otf,ttf} ~/.fonts && cd ~ && rm -rf ~/fonts
+#fc-cache -f -v
 
 # Copy dotfiles
 cd ~/dotfiles
@@ -54,20 +50,13 @@ function config_kernel() {
     sudo echo -e "options nvidia-drm modeset=1 NVreg_RegistryDwords=\"PowerMizerEnable=0x1; PerfLevelSrc=0x2222; PowerMizerLevel=0x3; PowerMizerDefault=0x3; PowerMizerDefaultAC=0x3\"" | sudo tee -a /etc/modprobe.d/nvidia.conf
     sudo mkinitcpio -P
     if [ -f /etc/default/grub ]; then
-        sudo sed -i 's/\(GRUB_CMDLINE_LINUX_DEFAULT=".*\)"/\1 nvidia_drm.modeset=1 nvidia.NVreg_PreserveVideoMemoryAllocations=1"/' /etc/default/grub
+        sudo sed -i 's/\(GRUB_CMDLINE_LINUX_DEFAULT=".*\)"/\1 nvidia_drm.modeset=1 nvidia.NVreg_PreserveVideoMemoryAllocations=1 nvidia.NVreg_EnableGpuFirmware=0 nvidia_drm.fbdev=1"/' /etc/default/grub
         sudo grub-mkconfig -o /boot/grub/grub.cfg
     fi
-    echo "blacklist nouveau" | sudo tee -a /etc/modprobe.d/nouveau.conf
-    if [ -f "/etc/modprobe.d/blacklist.conf" ]; then
-        echo "install nouveau /bin/true" | sudo tee -a "/etc/modprobe.d/blacklist.conf"
-    else
-        echo "install nouveau /bin/true" | sudo tee "/etc/modprobe.d/blacklist.conf"
-    fi
-    echo -e "Done"
+    printf "Done"
 }
 config_kernel
 
-
 # End remove dotfiles
 cd ~ && rm -rf dotfiles
-echo "Reboot PC"
+printf "Reboot PC"
