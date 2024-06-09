@@ -3,14 +3,10 @@
 sudo pacman -Syu && sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si && cd .. && rm -rf yay
 
 # Install NVIDIA Beta drivers. Currently 555.52.04
-yay -S --noconfirm nvidia-beta-dkms nvidia-utils-beta lib32-nvidia-utils-beta libva-nvidia-driver-git
-sudo systemctl enable nvidia-suspend.service
-sudo systemctl enable nvidia-hibernate.service
-sudo systemctl enable nvidia-resume.service
+yay -S --noconfirm nvidia-beta-dkms
 
 # egl-wayland provides the necessary compatibility layer, instead of falling back to zink/Vulkan for proprietary drivers.
 yay -S --noconfirm egl-wayland-git
-#yay -S --noconfirm nvidia-beta-dkms opencl-nvidia-beta lib32-opencl-nvidia-beta
 
 # Install latest Hyprland
 yay -S --noconfirm hyprland-git 
@@ -26,7 +22,7 @@ yay -S --noconfirm rofi-lbonn-wayland-git nwg-dock-hyprland waybar-git visual-st
 sudo pacman -S --noconfirm python-pyquery gnome-themes-extra gtk-engine-murrine sassc 
 # Install Theme,cursors and icons
 cd ~ && git clone https://github.com/vinceliuice/Colloid-icon-theme && cd Colloid-icon-theme && ./install.sh && cd .. && rm -rf Colloid-icon-theme
-cd ~ && git clone https://github.com/vinceliuice/Colloid-gtk-theme && cd Colloid-gtk-theme && ./install.sh -t purple grey blue -c dark --tweaks nord black rimless float -l fixed && cd .. && rm -rf Colloid-gtk-theme
+cd ~ && git clone https://github.com/vinceliuice/Colloid-gtk-theme && cd Colloid-gtk-theme && ./install.sh -t default -c dark -s standard --tweaks black nord -l fixed && cd .. && rm -rf Colloid-gtk-theme
 cd ~ && git clone https://github.com/vinceliuice/McMojave-cursors && cd McMojave-cursors && sudo ./install.sh && cd .. && rm -rf McMojave-cursors
 #cd ~ && git clone https://github.com/yeyushengfan258/Reversal-icon-theme.git && cd Reversal-icon-theme && ./install.sh -a && cd .. && rm -rf Reversal-icon-theme
 
@@ -58,6 +54,10 @@ function config_kernel() {
     printf "Done"
 }
 config_kernel
+
+sudo systemctl enable nvidia-suspend.service
+sudo systemctl enable nvidia-hibernate.service
+sudo systemctl enable nvidia-resume.service
 
 # End remove dotfiles
 cd ~ && rm -rf dotfiles
