@@ -4,8 +4,8 @@ from pyquery import PyQuery  # install using `pip install pyquery`
 import json
 # weather icons
 weather_icons = {
-    "sunnyDay": "滛",
-    "clearNight": "望",
+    "sunnyDay": "",
+    "clearNight": "",
     "cloudyFoggyDay": "",
     "cloudyFoggyNight": "",
     "rainyDay": "",

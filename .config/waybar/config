@@ -120,7 +120,7 @@
 		"on-click": "pavucontrol"
 	},
 	"tray": {
-		"icon-size": 17,
+		"icon-size": 16,
 		"spacing": 8
 	}
 }
