@@ -1,7 +1,7 @@
 {
-	"margin-top": 0,
-	"margin-left": 0,
-	"margin-right": 0,
+	"margin-top": 4,
+	"margin-left": 6,
+	"margin-right": 6,
 	"height": 28,
 	"modules-left": [
 		"hyprland/window"
@@ -11,15 +11,15 @@
 	],
 	"modules-right": [
 		"tray",
-        "custom/weather",
+		"custom/weather",
 		"custom/nvidia-smi",
 		"temperature",
 		"pulseaudio",
 		"clock"
 	],
 	"hyprland/window": {
-		"format": "{}",
-		"max-length": 35,
+		"format": " {}",
+		"max-length": 50,
 		"rewrite": {
 			"": "Hyprland"
 		},
