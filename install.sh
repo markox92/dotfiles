@@ -3,8 +3,11 @@
 sudo pacman -Syu && sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si && cd .. && rm -rf yay
 
 # Install NVIDIA Beta drivers. Currently 555.52.04
+cd ~
+git clone https://github.com/Frogging-Family/nvidia-all.git
+cd nvidia-all
+makepkg -si
 #yay -S --noconfirm nvidia-beta-dkms opencl-nvidia-beta lib32-opencl-nvidia-beta
-yay -S --noconfirm linux-headers nvidia-beta-dkms
 # Install latest Hyprland
 yay -S --noconfirm hyprland-git 
 
@@ -12,23 +15,25 @@ yay -S --noconfirm hyprland-git
 sudo pacman -S --noconfirm hyprpaper nwg-look egl-wayland
 
 # Install package & software
-sudo pacman -S --noconfirm firefox alacritty xsettingsd wget curl nano zip unzip ttf-jetbrains-mono-nerd python-pyquery
+sudo pacman -S --noconfirm firefox alacritty xsettingsd wget curl nano zip unzip ttf-jetbrains-mono-nerd
 yay -S --noconfirm rofi-lbonn-wayland-git nwg-dock-hyprland waybar-git visual-studio-code-bin
 
+# Install Theme and waybar requirements
+sudo pacman -S --noconfirm python-pyquery gnome-themes-extra gtk-engine-murrine sassc 
 # Install Theme,cursors and icons
-cd ~ && git clone https://github.com/vinceliuice/WhiteSur-gtk-theme.git --depth=1 && cd WhiteSur-gtk-theme && ./install.sh -l && cd .. && rm -rf WhiteSur-gtk-theme
+cd ~ && git clone https://github.com/vinceliuice/Colloid-icon-theme && cd Colloid-icon-theme && ./install.sh && cd .. && rm -rf Colloid-icon-theme
+cd ~ && git clone https://github.com/vinceliuice/Colloid-gtk-theme && cd Colloid-gtk-theme && ./install.sh -t purple grey blue -c dark --tweaks nord black rimless float -l fixed && cd .. && rm -rf Colloid-gtk-theme
 cd ~ && git clone https://github.com/vinceliuice/McMojave-cursors && cd McMojave-cursors && sudo ./install.sh && cd .. && rm -rf McMojave-cursors
-cd ~ && git clone https://github.com/yeyushengfan258/Reversal-icon-theme.git && cd Reversal-icon-theme && ./install.sh -a && cd .. && rm -rf Reversal-icon-theme
+#cd ~ && git clone https://github.com/yeyushengfan258/Reversal-icon-theme.git && cd Reversal-icon-theme && ./install.sh -a && cd .. && rm -rf Reversal-icon-theme
 
 # Install fonts
+sudo pacman -S --noconfirm ttf-jetbrains-mono-nerd
 # Check if .fonts directory exists in the home directory
 if [ ! -d "$HOME/.fonts" ]; then
-    # If it does not exist, create it
     mkdir -p "$HOME/.fonts"
 fi
-
-git clone https://github.com/epk/SF-Mono-Nerd-Font ~/fonts && cd ~/fonts && mv * ~/.fonts && cd ~ && rm -rf ~/fonts
-git clone https://github.com/sahibjotsaggu/San-Francisco-Pro-Fonts ~/fonts && cd ~/fonts && mv * ~/.fonts && cd ~ && rm -rf ~/fonts
+git clone https://github.com/epk/SF-Mono-Nerd-Font ~/fonts && cd ~/fonts && mv *.otf ~/.fonts && cd ~ && rm -rf ~/fonts
+git clone https://github.com/sahibjotsaggu/San-Francisco-Pro-Fonts ~/fonts && cd ~/fonts && mv *.{otf,ttf} ~/.fonts && cd ~ && rm -rf ~/fonts
 fc-cache -f -v
 
 # Copy dotfiles
