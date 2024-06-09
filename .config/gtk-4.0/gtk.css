@@ -1,11 +1,7 @@
-/* Mohammad Mahdi Tayebi
- * 
+/* 
  * To apply transparent sidebar. copy this file into ~/.config/gtk-4.0/gtk.css and if 
  * you use adw-gtk3 theme you can add it to ~/.config/gtk-3.0/gtk.css as well
- * 
- * Use blur my shell extension to add blur effect behind the transparent part of windows
 */
-
 /* Transparent Sidebar */
 window {
   background: alpha(@window_bg_color, 0.6);
