@@ -27,7 +27,7 @@ cd ~ && git clone https://github.com/vinceliuice/McMojave-cursors && cd McMojave
 #cd ~ && git clone https://github.com/yeyushengfan258/Reversal-icon-theme.git && cd Reversal-icon-theme && ./install.sh -a && cd .. && rm -rf Reversal-icon-theme
 
 # Install fonts
-sudo pacman -S --noconfirm ttf-jetbrains-mono-nerd
+sudo pacman -S --noconfirm ttf-jetbrains-mono-nerd noto-fonts
 # Check if .fonts directory exists in the home directory
 if [ ! -d "$HOME/.fonts" ]; then
     mkdir -p "$HOME/.fonts"
