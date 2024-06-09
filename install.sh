@@ -32,7 +32,7 @@ sudo pacman -S --noconfirm ttf-jetbrains-mono ttf-jetbrains-mono-nerd noto-fonts
 # Copy dotfiles
 mkdir -p ~/.local/share/warp-terminal/themes
 cd ~/dotfiles
-cp -r .config ~/ && cp -r Wallpapers ~/ && cp -r .local ~/
+yes | cp -rf .config ~/ && cp -r Wallpapers ~/ && cp -r .local ~/
 
 
 function config_kernel() {
