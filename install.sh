@@ -59,7 +59,7 @@ sudo systemctl enable nvidia-suspend.service
 sudo systemctl enable nvidia-hibernate.service
 sudo systemctl enable nvidia-resume.service
 # Hide buttons close, min, max
-gsettings set org.gnome.desktop.wm.preferences button-layout :
+#gsettings set org.gnome.desktop.wm.preferences button-layout :
 
 # End remove dotfiles
 cd ~ && rm -rf dotfiles
