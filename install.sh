@@ -23,7 +23,7 @@ sudo pacman -S --noconfirm python-pyquery gnome-themes-extra gtk-engine-murrine 
 # Install Theme,cursors and icons
 cd ~ && git clone https://github.com/vinceliuice/Colloid-icon-theme && cd Colloid-icon-theme && ./install.sh && cd .. && rm -rf Colloid-icon-theme
 cd ~ && git clone https://github.com/vinceliuice/Colloid-gtk-theme && cd Colloid-gtk-theme && ./install.sh -t default -c dark -s standard --tweaks black nord -l fixed && cd .. && rm -rf Colloid-gtk-theme
-cd ~ && git clone https://github.com/vinceliuice/WhiteSur-cursors && cd WhiteSur-cursors && sudo ./install.sh && cd .. && rm -rf WhiteSur-cursors
+cd ~ && git clone https://github.com/vinceliuice/WhiteSur-cursors && cd WhiteSur-cursors && ./install.sh && cd .. && rm -rf WhiteSur-cursors
 #cd ~ && git clone https://github.com/yeyushengfan258/Reversal-icon-theme.git && cd Reversal-icon-theme && ./install.sh -a && cd .. && rm -rf Reversal-icon-theme
 
 # Install fonts
@@ -60,6 +60,7 @@ sudo systemctl enable nvidia-hibernate.service
 sudo systemctl enable nvidia-resume.service
 # Hide buttons close, min, max
 #gsettings set org.gnome.desktop.wm.preferences button-layout :
+gsettings set org.gnome.desktop.interface cursor-theme 'WhiteSur-cursors'
 
 # End remove dotfiles
 cd ~ && rm -rf dotfiles
