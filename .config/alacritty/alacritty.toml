@@ -20,12 +20,12 @@ white = "#ffffff"
 yellow = "#A3A0FF"
 
 [colors.cursor]
-cursor = "#F5E0DC"
+cursor = "#BAC2DE"
 text = "#1E1E2E"
 
 [colors.dim]
 black = "#45475A"
-blue = "#89B4FA"
+blue = "#b5c1ff"
 cyan = "#94E2D5"
 green = "#A6E3A1"
 magenta = "#F5C2E7"
@@ -43,7 +43,7 @@ foreground = "#1E1E2E"
 
 [colors.normal]
 black = "#000D1C"
-blue = "#2B4FFF"
+blue = "#76aaff"
 cyan = "#28B9FF"
 green = "#8E76FF"
 magenta = "#2883FF"
@@ -66,24 +66,44 @@ background = "#A6ADC8"
 foreground = "#1E1E2E"
 
 [colors.selection]
-background = "#F5E0DC"
-text = "#1E1E2E"
+background = "#5172a7"
+text = "#ffffff"
 
 [colors.vi_mode_cursor]
 cursor = "#B4BEFE"
 text = "#1E1E2E"
 
 [font]
-size = 14
+size = 13
 
 [font.normal]
 family = "JetbrainsMono Nerd Font"
-style = "Regular"
+style = "Light"
+
+[font.bold]
+family = "JetbrainsMono Nerd Font"
+style = "bold"
 
 [[keyboard.bindings]]
 action = "SpawnNewInstance"
 key = "Return"
 mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "Copy"
+key = "C"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "Paste"
+key = "V"
+mods = "Control"
+
+[cursor]
+style = { shape = "Beam", blinking = "On" }
+unfocused_hollow = false
+blink_interval = 300
+thickness = 0.1
 
 [shell]
 program = "/usr/bin/zsh"
