@@ -39,7 +39,7 @@ mkdir -p ~/.local/share/warp-terminal/themes
 # Copy dotfiles
 cd ~/dotfiles
 yes | cp -rf .config ~/ && cp -r Wallpapers ~/ && cp -r .local ~/
-
+yes | cp -rf .zshrc ~/.zshrc && cp -r .bashrc ~/.bashrc
 function config_kernel() {
     printf "Config kernel..."
     sudo sed -Ei 's/^(MODULES=\([^\)]*)\)/\1nvidia nvidia_modeset nvidia_uvm nvidia_drm)/' /etc/mkinitcpio.conf
