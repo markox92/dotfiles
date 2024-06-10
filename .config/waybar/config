@@ -92,7 +92,7 @@
 	"custom/menu": {
 		"format": "{icon}",
 		"tooltip-format": "Apps Menu",
-		"on-click": "nwg-drawer -pbexit \"Exit Menu\" -pbpoweroff \"Shut Down\" -pbreboot \"Reboot\" -term alacritty -fm nautilus -ovl -spacing 32 -mb 0 -ml 0 -mr 0 -mt 0 -is 96 -nocats -pbsize 48",
+		"on-click": "nwg-drawer -pbexit 'Exit Menu' -pbpoweroff 'systemctl poweroff' -pbreboot 'systemctl reboot' -term alacritty -fm nautilus -ovl -spacing 32 -mb 0 -ml 0 -mr 0 -mt 0 -is 96 -nocats -pbsize 48",
 		"format-icons": {
 			"default": ""
 		}
