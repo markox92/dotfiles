@@ -20,7 +20,7 @@ sudo pacman -S --noconfirm firefox alacritty xsettingsd wget curl nano zip unzip
 yay -S --noconfirm rofi-lbonn-wayland-git nwg-dock-hyprland nwg-drawer waybar-git visual-studio-code-bin
 
 # Install Theme and waybar requirements
-sudo pacman -S --noconfirm python-pyquery gnome-themes-extra gtk-engine-murrine sassc 
+sudo pacman -S --noconfirm python-pyquery gnome-themes-extra gtk-engine-murrine sassc python-graphicaleffects
 # Install Theme,cursors and icons
 cd ~ && git clone https://github.com/vinceliuice/Colloid-icon-theme && cd Colloid-icon-theme && ./install.sh && cd .. && rm -rf Colloid-icon-theme
 cd ~ && git clone https://github.com/vinceliuice/Colloid-gtk-theme && cd Colloid-gtk-theme && ./install.sh -t default -c dark -s standard --tweaks black nord -l fixed && cd .. && rm -rf Colloid-gtk-theme
@@ -40,6 +40,7 @@ mkdir -p ~/.local/share/warp-terminal/themes
 cd ~/dotfiles
 yes | cp -rf .config ~/ && cp -r Wallpapers ~/ && cp -r .local ~/
 yes | cp -rf .zshrc ~/.zshrc && cp -r .bashrc ~/.bashrc
+sudo mv simple-sddm /usr/share/sddm/themes/
 function config_kernel() {
     printf "Config kernel..."
     sudo sed -Ei 's/^(MODULES=\([^\)]*)\)/\1nvidia nvidia_modeset nvidia_uvm nvidia_drm)/' /etc/mkinitcpio.conf
@@ -56,6 +57,7 @@ config_kernel
 sudo systemctl enable nvidia-suspend.service
 sudo systemctl enable nvidia-hibernate.service
 sudo systemctl enable nvidia-resume.service
+sudo systemctl enable sddm.service
 # Hide buttons close, min, max
 #gsettings set org.gnome.desktop.wm.preferences button-layout :
 gsettings set org.gnome.desktop.interface cursor-theme 'WhiteSur-cursors'
