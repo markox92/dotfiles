@@ -4,6 +4,7 @@
 	"margin-right": 6,
 	"height": 28,
 	"modules-left": [
+		"custom/menu",
 		"hyprland/window"
 	],
 	"modules-center": [
@@ -18,11 +19,8 @@
 		"clock"
 	],
 	"hyprland/window": {
-		"format": " {}",
+		"format": "{}",
 		"max-length": 50,
-		"rewrite": {
-			"": "Hyprland"
-		},
 		"separate-outputs": true
 	},
 	"hyprland/workspaces": {
@@ -90,6 +88,15 @@
 		"return-type": "json",
 		//"on-click": "xdg-open https://weather.com/en-IN/weather/today/l/$(location_id)",
 		"format-alt": "{alt}"
+	},
+	"custom/menu": {
+		"format": "{icon}",
+		"tooltip-format": "Apps Menu",
+		"on-click": "nwg-drawer -pbexit \"Exit Menu\" -pbpoweroff \"Shut Down\" -pbreboot \"Reboot\" -term alacritty -fm nautilus -ovl -spacing 32 -mb 0 -ml 0 -mr 0 -mt 0 -is 96 -nocats -pbsize 48",
+		"format-icons": {
+			"default": ""
+		}
+
 	},
 	"network": {
 		"format-wifi": "  {signalStrength}%",
