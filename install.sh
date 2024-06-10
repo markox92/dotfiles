@@ -16,7 +16,7 @@ yay -S --noconfirm hyprland-git
 sudo pacman -S --noconfirm hyprpaper nwg-look
 
 # Install package & software
-sudo pacman -S --noconfirm firefox alacritty xsettingsd wget curl nano zip unzip solaar zsh swappy mpv nautilus udisks2 dunst
+sudo pacman -S --noconfirm firefox alacritty xsettingsd wget curl nano zip unzip solaar swappy mpv nautilus udisks2 dunst
 yay -S --noconfirm rofi-lbonn-wayland-git nwg-dock-hyprland nwg-drawer waybar-git visual-studio-code-bin
 
 # Install Theme and waybar requirements
@@ -30,11 +30,15 @@ cd ~ && git clone https://github.com/vinceliuice/WhiteSur-cursors && cd WhiteSur
 # Install fonts
 sudo pacman -S --noconfirm ttf-jetbrains-mono ttf-jetbrains-mono-nerd noto-fonts
 
-# Copy dotfiles
+# Config terminal
+sudo pacman -S --noconfirm zsh
+yay -S --noconfirm zsh-autosuggestions zsh-syntax-highlighting
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
 mkdir -p ~/.local/share/warp-terminal/themes
+
+# Copy dotfiles
 cd ~/dotfiles
 yes | cp -rf .config ~/ && cp -r Wallpapers ~/ && cp -r .local ~/
-
 
 function config_kernel() {
     printf "Config kernel..."
