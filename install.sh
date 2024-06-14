@@ -17,7 +17,7 @@ sudo pacman -S --noconfirm hyprpaper nwg-look
 
 # Install package & software
 sudo pacman -S --noconfirm firefox alacritty xsettingsd wget curl nano zip unzip solaar swappy mpv nautilus udisks2 dunst fontconfig
-yay -S --noconfirm rofi-lbonn-wayland-git nwg-dock-hyprland nwg-drawer waybar-git visual-studio-code-bin
+yay -S --noconfirm rofi-lbonn-wayland-git nwg-dock-hyprland nwg-drawer waybar-git visual-studio-code-bin xdg-desktop-portal-hyprland-git
 
 # Install Theme and waybar requirements
 sudo pacman -S --noconfirm python-pyquery gnome-themes-extra gtk-engine-murrine sassc python-graphicaleffects
@@ -28,7 +28,7 @@ cd ~ && git clone https://github.com/vinceliuice/WhiteSur-cursors && cd WhiteSur
 #cd ~ && git clone https://github.com/yeyushengfan258/Reversal-icon-theme.git && cd Reversal-icon-theme && ./install.sh -a && cd .. && rm -rf Reversal-icon-theme
 
 # Install fonts
-sudo pacman -S --noconfirm ttf-jetbrains-mono ttf-jetbrains-mono-nerd noto-fonts
+sudo pacman -S --noconfirm ttf-jetbrains-mono ttf-jetbrains-mono-nerd noto-fonts ttf-ubuntu-nerd
 
 # Config terminal
 sudo pacman -S --noconfirm zsh
