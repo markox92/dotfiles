@@ -25,7 +25,6 @@ sudo pacman -S --noconfirm python-pyquery gnome-themes-extra gtk-engine-murrine 
 cd ~ && git clone https://github.com/vinceliuice/Colloid-icon-theme && cd Colloid-icon-theme && ./install.sh && cd .. && rm -rf Colloid-icon-theme
 cd ~ && git clone https://github.com/vinceliuice/Colloid-gtk-theme && cd Colloid-gtk-theme && ./install.sh -t default -c dark -s standard --tweaks black nord -l fixed && cd .. && rm -rf Colloid-gtk-theme
 cd ~ && git clone https://github.com/vinceliuice/WhiteSur-cursors && cd WhiteSur-cursors && ./install.sh && cd .. && rm -rf WhiteSur-cursors
-#cd ~ && git clone https://github.com/yeyushengfan258/Reversal-icon-theme.git && cd Reversal-icon-theme && ./install.sh -a && cd .. && rm -rf Reversal-icon-theme
 
 # Install fonts
 sudo pacman -S --noconfirm ttf-jetbrains-mono ttf-jetbrains-mono-nerd noto-fonts ttf-ubuntu-nerd
@@ -41,7 +40,7 @@ cd ~/dotfiles
 yes | cp -rf .config ~/ && cp -r Wallpapers ~/ && cp -r .local ~/
 yes | cp -rf .zshrc ~/.zshrc && cp -r .bashrc ~/.bashrc
 sudo mkdir -p /usr/local/share/fonts
-sudo cp -rf /fonts/msfonts/* /usr/local/share/fonts/
+sudo cp -rf fonts/msfonts/* /usr/local/share/fonts/
 sudo fc-cache
 sudo mv simple-sddm /usr/share/sddm/themes/
 function config_kernel() {
