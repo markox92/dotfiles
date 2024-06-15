@@ -40,6 +40,9 @@ mkdir -p ~/.local/share/warp-terminal/themes
 cd ~/dotfiles
 yes | cp -rf .config ~/ && cp -r Wallpapers ~/ && cp -r .local ~/
 yes | cp -rf .zshrc ~/.zshrc && cp -r .bashrc ~/.bashrc
+sudo mkdir -p /usr/local/share/fonts
+sudo cp -rf /fonts/msfonts/* /usr/local/share/fonts/
+sudo fc-cache
 sudo mv simple-sddm /usr/share/sddm/themes/
 function config_kernel() {
     printf "Config kernel..."
