@@ -20,7 +20,9 @@ sudo pacman -S --noconfirm firefox alacritty xsettingsd wget curl nano zip unzip
 yay -S --noconfirm rofi-lbonn-wayland-git nwg-dock-hyprland nwg-drawer waybar-git visual-studio-code-bin
 
 # Install Theme and waybar requirements
-sudo pacman -Syu --noconfirm gnome-themes-extra gtk-engine-murrine sassc sddm python-pyquery qt5-graphicaleffects qt5-svg qt5-quickcontrols2
+sudo pacman -Syu --noconfirm gnome-themes-extra gtk-engine-murrine sassc python-pyquery
+#SDDM Install
+#sudo pacman -Syu --noconfirm sddm qt5-graphicaleffects qt5-svg qt5-quickcontrols2
 # Install Theme,cursors and icons
 cd ~ && git clone https://github.com/vinceliuice/Colloid-icon-theme && cd Colloid-icon-theme && ./install.sh && cd .. && rm -rf Colloid-icon-theme
 cd ~ && git clone https://github.com/vinceliuice/Colloid-gtk-theme && cd Colloid-gtk-theme && ./install.sh -t default -c dark -s standard --tweaks black nord -l fixed && cd .. && rm -rf Colloid-gtk-theme
@@ -42,7 +44,11 @@ yes | cp -rf .zshrc ~/.zshrc && cp -r .bashrc ~/.bashrc
 sudo mkdir -p /usr/local/share/fonts
 sudo cp -rf fonts/msfonts/* /usr/local/share/fonts/
 sudo fc-cache
-sudo mv simple-sddm /usr/share/sddm/themes/
+
+# Set macOS hypercursors
+hyprctl setcursor macOS 24
+
+#sudo mv simple-sddm /usr/share/sddm/themes/
 function config_kernel() {
     printf "Config kernel..."
     sudo sed -Ei 's/^(MODULES=\([^\)]*)\)/\1nvidia nvidia_modeset nvidia_uvm nvidia_drm)/' /etc/mkinitcpio.conf
@@ -59,11 +65,12 @@ config_kernel
 sudo systemctl enable nvidia-suspend.service
 sudo systemctl enable nvidia-hibernate.service
 sudo systemctl enable nvidia-resume.service
-sudo systemctl enable sddm.service
+#sudo systemctl enable sddm.service
 # Hide buttons close, min, max
 #gsettings set org.gnome.desktop.wm.preferences button-layout :
 gsettings set org.gnome.desktop.interface cursor-theme 'WhiteSur-cursors'
-
-# End remove dotfiles
-cd ~ && rm -rf dotfiles
 printf "Reboot PC"
+# Text is blurry
+#  /etc/environment add 
+# FREETYPE_PROPERTIES=“cff:no-stem-darkening=0 autofitter:no-stem-darkening=0”
+# Restart
