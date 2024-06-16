@@ -40,7 +40,7 @@ mkdir -p ~/.local/share/warp-terminal/themes
 # Copy dotfiles
 cd ~/dotfiles
 yes | cp -rf .config ~/ && cp -r Wallpapers ~/ && cp -r .local ~/
-yes | cp -rf .zshrc ~/.zshrc && cp -r .bashrc ~/.bashrc
+yes | cp -rf .zshrc ~/.zshrc && cp -r .bashrc ~/.bashrc && cp -r .xsettingsd ~/.xsettingsd && cp -r .Xresources ~/.Xresources
 sudo mkdir -p /usr/local/share/fonts
 sudo cp -rf fonts/msfonts/* /usr/local/share/fonts/
 sudo fc-cache
