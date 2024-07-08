@@ -34,4 +34,12 @@ config_kernel
 sudo systemctl enable nvidia-suspend.service
 sudo systemctl enable nvidia-hibernate.service
 sudo systemctl enable nvidia-resume.service
+
+
+pacman -Sy git
+cd ~
+git clone https://github.com/FireDrop6000/hyprland-mydots.git ~/mydots
+cd ~/mydots
+yes | cp -rf . ~/.config
+
 printf "Reboot PC"
