@@ -14,7 +14,7 @@ yay -S --noconfirm hyprland-git
 sudo pacman -S --noconfirm hyprpaper
 
 # Install package & software
-sudo pacman -S --noconfirm firefox alacritty kitty wget curl nano zip unzip  nautilus neofetch dunst cava xdg-desktop-portal-hyprland
+sudo pacman -S --noconfirm firefox alacritty kitty wget curl nano zip unzip thunar nautilus neofetch dunst cava xdg-desktop-portal-hyprland
 yay -S --noconfirm rofi-lbonn-wayland-git waybar-git visual-studio-code-bin hyprlock-git
 
 #sudo mv simple-sddm /usr/share/sddm/themes/
