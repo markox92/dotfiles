@@ -11,7 +11,7 @@ yay -S --noconfirm nvidia-beta-dkms libva-nvidia-driver-git
 yay -S --noconfirm hyprland-git 
 
 # Install hyprpaper, wallpapers support for Hyprland
-sudo pacman -S --noconfirm hyprpaper nwg-look
+sudo pacman -S --noconfirm hyprpaper
 
 # Install package & software
 sudo pacman -S --noconfirm firefox alacritty kitty wget curl nano zip unzip  nautilus neofetch dunst cava xdg-desktop-portal-hyprland
