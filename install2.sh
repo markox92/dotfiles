@@ -1,21 +1,20 @@
 #!/bin/bash
 # Install necessary packages for building from source and the 'yay' AUR helper.
 sudo pacman -Syu && sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si && cd .. && rm -rf yay
-
-# Install NVIDIA Beta drivers. Currently 555.52.04
+yay -Syu --devel
+# Install NVIDIA Beta drivers. Currently 560.31.02-1
 yay -S --noconfirm linux-headers 
 yay -S --noconfirm nvidia-beta-dkms libva-nvidia-driver-git
 
 
 # Install latest Hyprland
-yay -S --noconfirm hyprland-git 
-
+sudo yay -S --noconfirm hyprland-git
 # Install hyprpaper, wallpapers support for Hyprland
 sudo pacman -S --noconfirm hyprpaper
 
 # Install package & software
-sudo pacman -S --noconfirm firefox alacritty kitty wget curl nano zip unzip thunar nautilus neofetch dunst cava xdg-desktop-portal-hyprland
-yay -S --noconfirm rofi-lbonn-wayland-git waybar-git visual-studio-code-bin hyprlock-git
+sudo pacman -S --noconfirm firefox alacritty kitty wget curl nano zip unzip thunar nautilus neofetch dunst cava
+yay -S --noconfirm rofi-lbonn-wayland-git waybar-git visual-studio-code-bin hyprlock-git 
 
 #sudo mv simple-sddm /usr/share/sddm/themes/
 function config_kernel() {
