@@ -8,7 +8,7 @@ yay -S --noconfirm nvidia-beta-dkms libva-nvidia-driver-git
 
 
 # Install latest Hyprland
-sudo yay -S --noconfirm hyprland-git
+yay -S --noconfirm hyprland-git
 # Install hyprpaper, wallpapers support for Hyprland
 sudo pacman -S --noconfirm hyprpaper
 
