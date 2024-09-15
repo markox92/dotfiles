@@ -7,6 +7,7 @@ yay -S --noconfirm linux-headers
 yay -S --noconfirm nvidia-beta-dkms libva-nvidia-driver-git
 # Install package & software
 sudo pacman -S --noconfirm firefox zip unzip
+yay -S visual-studio-code-bin
 #sudo mv simple-sddm /usr/share/sddm/themes/
 function config_kernel() {
     printf "Config kernel..."
