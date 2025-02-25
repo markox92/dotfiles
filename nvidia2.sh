@@ -5,6 +5,8 @@ yay -Syu --devel
 # Install NVIDIA Beta drivers. Currently 560.31.02-1
 yay -S --noconfirm linux-headers 
 yay -S --noconfirm nvidia-beta-dkms libva-nvidia-driver-git
+
+yay -S --noconfirm hyprland-meta-git
 # Install package & software
 sudo pacman -S --noconfirm firefox zip unzip
 yay -S visual-studio-code-bin
