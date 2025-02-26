@@ -1,5 +1,6 @@
 #!/bin/bash
 # Install necessary packages for building from source and the 'yay' AUR helper.
+#https://github.com/anthonyprime202/dotfiles?tab=readme-ov-file
 sudo pacman -Syu && sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si && cd .. && rm -rf yay
 yay -Syu --devel
 # Install NVIDIA Beta drivers
